@@ -1,0 +1,24 @@
+---
+interface Props {
+  colorClasses: string;
+}
+
+const { colorClasses } = Astro.props;
+---
+
+<nav
+  class={`${colorClasses} h-28 flex justify-between items-center layout font-["Playfair_Display"]`}
+>
+  <a class='md:text-4xl' href='/'> The Gizzverse</a>
+  <ul class='flex md:space-x-4'>
+    <li>
+      <a href='/'>HOME</a>
+    </li>
+    <li>
+      <a href='/'>DISCOGRAPHY</a>
+    </li>
+    <li>
+      <a href='/'>ABOUT</a>
+    </li>
+  </ul>
+</nav>

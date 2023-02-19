@@ -1,7 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Biography from '../components/Biography.astro';
 ---
 
-<Layout title='The Gizzverse'>
-  <h1>The Gizzverse</h1>
+<Layout colorPalette='main' title='The Gizzverse'>
+  <main class='layout'>
+    <Hero />
+    <Biography />
+  </main>
 </Layout>

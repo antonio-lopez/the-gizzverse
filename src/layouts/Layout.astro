@@ -1,12 +1,18 @@
 ---
-export interface Props {
+import '../styles/main.css';
+import Navbar from '../components/Navbar.astro';
+interface Props {
   title: string;
+  colorPalette: string;
 }
 
-const { title } = Astro.props;
+const { title, colorPalette } = Astro.props;
+const colorVariants: { [key: string]: string } = {
+  main: 'bg-primaryBg',
+  other: 'bg-gizzBg text-blue-700',
+};
 
-import Navbar from '../components/Navbar';
-import '../styles/main.css';
+let colorClasses = colorVariants[colorPalette];
 ---
 
 <!DOCTYPE html>
@@ -44,8 +50,8 @@ import '../styles/main.css';
 
     <title>{title}</title>
   </head>
-  <body>
-    <Navbar />
+  <body class={`${colorClasses}`}>
+    <Navbar colorClasses={colorClasses} />
     <slot />
   </body>
 </html>
